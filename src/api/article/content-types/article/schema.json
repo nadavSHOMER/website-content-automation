@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": "Create articles and pages with AI-generated content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": ["shared.rich-text", "shared.media", "shared.quote"]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "publishedAt": {
+      "type": "datetime"
+    }
+  }
+}
